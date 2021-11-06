@@ -32,14 +32,14 @@ def post(string):
 
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['GET', 'POST'])
-def NLPSERVICEA
+def NLPSERVICE1(string)
     input_str = string
     Service1Out = input_str.lower()
     return Service1Out
     
 #NLPService 2: remove numbers:
 @app.route('/grp2', methods=['GET', 'POST'])
-def NLPSERVICEB (string)
+def NLPSERVICE2 (string)
     import re
     input_str = string
     Service2Out = re.sub(r"\d+", "", input_str)
@@ -47,7 +47,7 @@ def NLPSERVICEB (string)
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
 @app.route('/grp3', methods=['GET', 'POST'])
-def NLPSERVICEC (string):
+def NLPSERVICE3 (string):
     tk = RegexpTokenizer('\s+', gaps = True)
     input_str = string
     Service3Out = tk.tokenize(input_str)
@@ -55,7 +55,7 @@ def NLPSERVICEC (string):
 
 #NLP Service 4: sentiment analysis
 @app.route('/grp4', methods=['GET', 'POST'])
-def NLPSERVICED
+def NLPSERVICE4
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
     string['compound'] = [analyzer.polarity_scores(string)['compound'] 
