@@ -66,12 +66,7 @@ def NLPSERVICE4(string):
 #NLP Service 6    
              
 #Error Handling
-if args[string] = '':
-             return {
-                 'message': f"No Input Provided"
-             }, 409
-        else print(Responseout)
-            return {'string':print(Responseout)},200
+
              
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=8080
