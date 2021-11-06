@@ -53,6 +53,13 @@ def NLPSERVICE3(string):
     Service3Out = tk.tokenize(input_str)
     return Service3Out
 
+#NLP Service 4: sentiment analysis
+@app.route('/4', methods=['GET', 'POST'])
+def NLPSERVICE4(string):
+    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+    analyzer = SentimentIntensityAnalyzer()
+    Service4Out = [analyzer.polarity_scores(string)] 
+    return Service4Out
              
 #NLP Service 5
 
