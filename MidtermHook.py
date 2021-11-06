@@ -1,8 +1,6 @@
 from flask import Flask
-from flask_restful import Resource, Api, regparse
 
 app = Flask(__name__) # "__main__"
-api = Api(app)
 
 @app.route('/grp8', methods=['GET', 'POST'])
 def flask_import():
