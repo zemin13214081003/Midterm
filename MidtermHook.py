@@ -37,7 +37,7 @@ def post(string):
 def NLPSERVICE1():
     input_str = string
     Service1Out = input_str.lower()
-    return Service1Out
+    return 'Service1Out'
 
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
