@@ -20,6 +20,7 @@ def flask_import():
 </html>
   """
 
+
 @app.before_request
 def before():
     print("Here is your string: ")
@@ -35,9 +36,9 @@ def post(string):
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
 def NLPSERVICE1():
-    input_str = string
+    input_str = request.args.get('string')
     Service1Out = input_str.lower()
-    return 'Service1Out'
+    return Service1Out
 
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
