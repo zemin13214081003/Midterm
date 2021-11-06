@@ -66,7 +66,7 @@ def NLPSERVICE4(string):
 #NLP Service 6    
              
 #Error Handling
-if args['string'] = '':
+if args[string] = '':
              return {
                  'message': f"No Input Provided"
              }, 409
