@@ -58,10 +58,6 @@ def NLPSERVICE3(string):
 def NLPSERVICE4(string):
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
-    string['compound'] = [analyzer.polarity_scores(string)['compound'] 
-    string['neg'] = [analyzer.polarity_scores(string)['neg'] 
-    string['neu'] = [analyzer.polarity_scores(string)['neu']
-    string['pos'] = [analyzer.polarity_scores(string)['pos'] 
     Service4Out = [analyzer.polarity_scores(string)['compound'] 
     return Service4Out
              
