@@ -20,6 +20,11 @@ def flask_import():
 </html>
   """
 
+
+@app.before_request
+def before():
+    print("Here is your string: ")
+
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
 def post(string):
@@ -29,14 +34,14 @@ def post(string):
     return{'NLP Service':args['string']}, 200
 
 #NLP Service 1: to lower case:
-@app.route('/1', methods=['GET', 'POST'])
+@app.route('/1', methods=['POST'])
 def NLPSERVICE1():
     input_str = string
     Service1Out = input_str.lower()
     return Service1Out
     
 #NLPService 2: remove numbers:
-@app.route('/2', methods=['GET', 'POST'])
+@app.route('/2', methods=['POST'])
 def NLPSERVICE2():
     import re
     input_str = string
@@ -44,7 +49,7 @@ def NLPSERVICE2():
     return Service2Out
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
-@app.route('/3', methods=['GET', 'POST'])
+@app.route('/3', methods=['POST'])
 def NLPSERVICE3():
     tk = RegexpTokenizer('\s+', gaps = True)
     input_str = string
@@ -52,7 +57,7 @@ def NLPSERVICE3():
     return Service3Out
 
 #NLP Service 4: sentiment analysis
-@app.route('/4', methods=['GET', 'POST'])
+@app.route('/4', methods=['POST'])
 def NLPSERVICE4():
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
