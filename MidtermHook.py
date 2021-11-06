@@ -20,7 +20,6 @@ def flask_import():
 </html>
   """
 
-
 @app.before_request
 def before():
     print("Here is your string: ")
