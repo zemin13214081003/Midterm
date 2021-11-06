@@ -2,11 +2,6 @@ from flask import Flask
 
 app = Flask(__name__) # "__main__"
 
-
-@app.before_request
-def before():
-    print("Here is your string: ")
-
 @app.route('/grp8', methods=['GET', 'POST'])
 def flask_import():
   return """<html>
@@ -25,6 +20,11 @@ def flask_import():
 </html>
   """
 
+
+@app.before_request
+def before():
+    print("Here is your string: ")
+
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
 def post(string):
@@ -39,7 +39,8 @@ def NLPSERVICE1():
     input_str = string
     Service1Out = input_str.lower()
     return Service1Out
-    
+print(NLPSERVICE1())
+
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
 def NLPSERVICE2():
@@ -47,6 +48,7 @@ def NLPSERVICE2():
     input_str = string
     Service2Out = re.sub(r"\d+", "", input_str)
     return Service2Out
+
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
 @app.route('/3', methods=['POST'])
