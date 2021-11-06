@@ -2,6 +2,11 @@ from flask import Flask
 
 app = Flask(__name__) # "__main__"
 
+
+@app.before_request
+def before():
+    print("Here is your string: ")
+
 @app.route('/grp8', methods=['GET', 'POST'])
 def flask_import():
   return """<html>
@@ -19,11 +24,6 @@ def flask_import():
 </body>
 </html>
   """
-
-
-@app.before_request
-def before():
-    print("Here is your string: ")
 
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
