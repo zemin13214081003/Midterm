@@ -23,6 +23,7 @@ def flask_import():
   """
 
 #Create the flask app to accept a string argument on the POST curl
+@app.route('/all', methods=['GET', 'POST'])
 def post(string):
     parser = reqparse.Requestparser()
     parser.add_argument('string', required = TRUE, type = str)
@@ -30,33 +31,43 @@ def post(string):
     return{'NLP Service':args['string']}, 200
 
 #NLP Service 1: to lower case:
-input_str = string
-input_str = input_str.lower()
-
+@app.route('/1', methods=['GET', 'POST'])
+def NLPSERVICE1
+    input_str = string
+    Service1Out = input_str.lower()
+    return Service1Out
+    
 #NLPService 2: remove numbers:
-import re
-input_str = string
-result = re.sub(r"\d+", "", input_str)
+@app.route('/grp2', methods=['GET', 'POST'])
+def NLPSERVICE2 (string)
+    import re
+    input_str = string
+    Service2Out = re.sub(r"\d+", "", input_str)
+    return Service2Out
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
-tk = RegexpTokenizer('\s+', gaps = True)
-input_str = string
-new_out = tk.tokenize(input_str)
+@app.route('/grp3', methods=['GET', 'POST'])
+def NLPSERVICE3 (string):
+    tk = RegexpTokenizer('\s+', gaps = True)
+    input_str = string
+    Service3Out = tk.tokenize(input_str)
+    return Service3Out
 
 #NLP Service 4: sentiment analysis
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-analyzer = SentimentIntensityAnalyzer()
-df['compound'] = [analyzer.polarity_scores(string)['compound'] 
-df['neg'] = [analyzer.polarity_scores(string)['neg'] 
-df['neu'] = [analyzer.polarity_scores(string)['neu']
-df['pos'] = [analyzer.polarity_scores(string)['pos'] 
-
+@app.route('/grp4', methods=['GET', 'POST'])
+def NLPSERVICE4
+    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+    analyzer = SentimentIntensityAnalyzer()
+    string['compound'] = [analyzer.polarity_scores(string)['compound'] 
+    string['neg'] = [analyzer.polarity_scores(string)['neg'] 
+    string['neu'] = [analyzer.polarity_scores(string)['neu']
+    string['pos'] = [analyzer.polarity_scores(string)['pos'] 
+    Service4Out = [analyzer.polarity_scores(string)['compound'] 
+    return Service4Out
+             
 #NLP Service 5
 
-#NLP Service 6
-
-#Combine all NLP outputs for POST response
-Responseout=rbind(input_str,result,new_out,analyzer)       
+#NLP Service 6    
              
 #Error Handling
 if args['string'] = '':
