@@ -37,13 +37,13 @@ def post(string):
     return{'NLP Service':args['string']}, 200
 
 #NLP Service 1: to lower case:
-@app.route('/nlp1', methods=['POST'])
+@app.route('/nlp1', methods=['GET', 'POST'])
 def nlp1():
     data = request.form.get('string')
-    return nlp1()
+    return nlp1(data)
   
 #NLPService 2: remove numbers:
-@app.route('/2', methods=['POST'])
+@app.route('/2', methods=['GET', 'POST'])
 def NLPSERVICE2():
     import re
     input_str = string
@@ -51,7 +51,7 @@ def NLPSERVICE2():
     return Service2Out
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
-@app.route('/3', methods=['POST'])
+@app.route('/3', methods=['GET', 'POST'])
 def NLPSERVICE3():
     tk = RegexpTokenizer('\s+', gaps = True)
     input_str = string
@@ -59,7 +59,7 @@ def NLPSERVICE3():
     return Service3Out
 
 #NLP Service 4: sentiment analysis
-@app.route('/4', methods=['POST'])
+@app.route('/4', methods=['GET', 'POST'])
 def NLPSERVICE4():
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
@@ -67,7 +67,7 @@ def NLPSERVICE4():
     return Service4Out
              
 #NLP Service 5
-@app.route('/5', methods=['POST'])
+@app.route('/5', methods=['GET', 'POST'])
 def NLPSERVICE5():
     str = request.form["request"]
     pattern = r',|\.|/|;|\'|`|\[|\]|<|>|\?|:|"|\{|\}|\~|!|@|#|\$|%|\^|&|\(|\)|-|=|\_|\+|，|。|、|；|‘|’|【|】|·|！| |…|（|）'
@@ -77,7 +77,7 @@ def NLPSERVICE5():
     return(strr)
 
 #NLP Service 6
-@app.route('/6', methods=['POST'])
+@app.route('/6', methods=['GET', 'POST'])
 def NLPSERVICE6():
     com1 = request.form["request"]
     lenth = len(com1)
@@ -90,4 +90,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=1212123)
+  app.run(host='0.0.0.0', port=3232321)
