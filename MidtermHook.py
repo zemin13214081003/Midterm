@@ -37,11 +37,8 @@ def post(string):
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
 def nlp1():
-    request = request.form["request"]
-    input_str = string
-    result = input_str.lower()
-    print(string)
-    return service1out(result=result)
+    data = request.args
+    return jsonify(data)
   
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
