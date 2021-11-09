@@ -38,7 +38,7 @@ def post(string):
 
 #NLP Service 1: to lower case:
 @app.route('/nlp1', methods=['POST'])
-def post(string):
+def nlp1(string):
     return {"data":string}
 
 #NLPService 2: remove numbers:
