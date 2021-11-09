@@ -20,7 +20,7 @@ def flask_import():
 </html>
   """
 
-string=request.args()
+
 
 @app.before_request
 def before():
