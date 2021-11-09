@@ -37,9 +37,10 @@ def post(string):
     return{'NLP Service':args['string']}, 200
 
 #NLP Service 1: to lower case:
-@app.route('/nlp1', methods=['POST'])
-def nlp1(string):
-    return {"data":string}
+@app.route("/nlp1", methods=["POST"])
+def nlp1():
+    string={'string':request.json['string']}
+    return jsonify({'string':string})
 
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['GET', 'POST'])
@@ -89,4 +90,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=12123)
+  app.run(host='0.0.0.0', port=45456)
