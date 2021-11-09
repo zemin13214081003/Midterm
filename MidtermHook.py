@@ -37,11 +37,11 @@ def post(string):
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
 def nlp1():
-    string=request.args.get("string")
+    request = request.form["request"]
     input_str = string
     Service1Out = input_str.lower()
     print(string)
-    return nlp1out
+    return nlp1out(result=result)
   
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
@@ -84,7 +84,7 @@ def NLPSERVICE6():
     lenth = len(com1)
     strr = ["the length of words ", lenth]
     return(strr)
-             
+  
 #Error Handling
 @app.errorhandler(404)
 def page_not_found(error):
