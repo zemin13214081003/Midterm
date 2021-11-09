@@ -41,7 +41,8 @@ def post(string):
 @app.route("/nlp1", methods=["POST"])
 def nlp1():
     string={'string':request.json['string']}
-    return jsonify({'string':string})
+    input_str = string.lower()
+    return jsonify({'string':input_str})
 
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['GET', 'POST'])
@@ -91,4 +92,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=98987)
+  app.run(host='0.0.0.0', port=56567)
