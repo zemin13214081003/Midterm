@@ -40,8 +40,9 @@ def NLPSERVICE1():
     string=request.data()
     input_str = string
     Service1Out = input_str.lower()
+    print(string)
     return Service1Out
-
+  
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
 def NLPSERVICE2():
@@ -85,7 +86,7 @@ def NLPSERVICE6():
     return(strr)
              
 #Error Handling
-print(string)
+
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=9776258)
