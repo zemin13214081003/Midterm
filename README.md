@@ -35,3 +35,11 @@ def post(string):
 @app.errorhandler(404)
 def page_not_found(error):
     return 'This page does not exist', 404
+
+Utilize the following Python curl call:
+
+import requests
+url = "http://3.21.158.149:789654/3"
+response = requests.post(url, json={'string': 'MY TEST123'})
+print(response.text)
+print(response)
