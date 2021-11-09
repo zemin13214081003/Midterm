@@ -3,11 +3,6 @@ from flask import request
 from flask import render_template
 from flask import jsonify
 import json
-import nltk
-from nltk import word_tokenize
-from nltk import pos_tag
-from nltk import RegexpParser
-from collections import Counter
 
 app = Flask(__name__) # "__main__"
 
@@ -44,7 +39,7 @@ def post(string):
     return{'NLP Service':args['string']}, 200
 
 #NLP Service 1: to lower case:
-@app.route("/nlp1", methods=["POST"])
+@app.route("/1", methods=["POST"])
 def NLPSERVICE1():
     string={'string':request.json['string']}
     string2=json.dumps(string)
@@ -70,7 +65,7 @@ def NLPSERVICE3():
     return jsonify({'':string3})
 
 #NLP Service 4: sentiment analysis
-@app.route('/4', methods=['GET', 'POST'])
+@app.route('/4', methods=['POST'])
 def NLPSERVICE4():
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
@@ -80,7 +75,7 @@ def NLPSERVICE4():
     return jsonify({'':string3})
              
 #NLP Service 5
-@app.route('/5', methods=['GET', 'POST'])
+@app.route('/5', methods=['POST'])
 def NLPSERVICE5():
     string  = {'string':request.json['string']}
     string2 = json.dumps(string)
@@ -91,7 +86,7 @@ def NLPSERVICE5():
     return jsonify({'':string3})
 
 #NLP Service 6
-@app.route('/6', methods=['GET', 'POST'])
+@app.route('/6', methods=['POST'])
 def NLPSERVICE6():
     string  = {'string':request.json['string']}
     string2 = json.dumps(string)
@@ -105,4 +100,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=12123)
+  app.run(host='0.0.0.0', port=789789)
