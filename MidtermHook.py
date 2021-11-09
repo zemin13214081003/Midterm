@@ -36,7 +36,7 @@ def post(string):
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
 def NLPSERVICE1(string):
-    string=request.data.get('string')
+    string=request.data()
     input_str = string
     Service1Out = input_str.lower()
     return Service1Out
