@@ -36,12 +36,12 @@ def post(string):
 
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
-def NLPSERVICE1():
+def nlp1():
     string=request.args.get("string")
     input_str = string
     Service1Out = input_str.lower()
     print(string)
-    return Service1Out
+    return nlp1out
   
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
