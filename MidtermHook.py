@@ -20,6 +20,7 @@ def flask_import():
 </html>
   """
 
+string=request.args()
 
 @app.before_request
 def before():
@@ -35,8 +36,8 @@ def post(string):
 
 #NLP Service 1: to lower case:
 @app.route('/1', methods=['POST'])
-def NLPSERVICE1(string):
-    string=request.data()
+def NLPSERVICE1():
+    string=request.args()
     input_str = string
     Service1Out = input_str.lower()
     return Service1Out
@@ -48,7 +49,6 @@ def NLPSERVICE2():
     input_str = string
     Service2Out = re.sub(r"\d+", "", input_str)
     return Service2Out
-
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
 @app.route('/3', methods=['POST'])
@@ -67,11 +67,25 @@ def NLPSERVICE4():
     return Service4Out
              
 #NLP Service 5
+@app.route('/5', methods=['POST'])
+def NLPSERVICE5():
+    str = request.form["request"]
+    pattern = r',|\.|/|;|\'|`|\[|\]|<|>|\?|:|"|\{|\}|\~|!|@|#|\$|%|\^|&|\(|\)|-|=|\_|\+|，|。|、|；|‘|’|【|】|·|！| |…|（|）'
+    com = re.split(pattern, str)
+    lenth = len(com)
+    strr = ["how many word ",lenth]
+    return(strr)
 
-#NLP Service 6    
+#NLP Service 6
+@app.route('/6', methods=['POST'])
+def NLPSERVICE6():
+    com1 = request.form["request"]
+    lenth = len(com1)
+    strr = ["the length of words ", lenth]
+    return(strr)
              
 #Error Handling
-
+print(request.args)
              
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=7544823)
+  app.run(host='0.0.0.0', port=9123)
