@@ -24,11 +24,9 @@ def flask_import():
 </html>
   """
 
-
-
 @app.before_request
 def before():
-    print('Hello and welcome')
+    print('FE 595 Group 8: Zemin Li, Sherri Putnam, Spencer Tirella')
 
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
@@ -80,7 +78,7 @@ def NLPSERVICE5():
     string  = {'string':request.json['string']}
     string2 = json.dumps(string)
     pattern = r',|\.|/|;|\'|`|\[|\]|<|>|\?|:|"|\{|\}|\~|!|@|#|\$|%|\^|&|\(|\)|-|=|\_|\+|，|。|、|；|‘|’|【|】|·|！| |…|（|）'
-    com = re.split(pattern, string2)
+    com = string2.split(pattern, string2)
     lenth = len(com)
     string3 = ["how many word ",lenth]
     return jsonify({'':string3})
@@ -92,7 +90,7 @@ def NLPSERVICE6():
     string2 = json.dumps(string)
     lenth = len(string2)
     string3 = ["the length of words ", lenth]
-    return(string3)
+    return jsonify({'':string3})
   
 #Error Handling
 @app.errorhandler(404)
@@ -100,4 +98,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=321654)
+  app.run(host='0.0.0.0', port=45456
