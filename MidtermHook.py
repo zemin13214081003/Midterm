@@ -74,4 +74,4 @@ def NLPSERVICE4():
 
              
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=73949569776259)
+  app.run(host='0.0.0.0', port=7544823)
