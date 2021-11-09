@@ -24,7 +24,7 @@ def flask_import():
 
 @app.before_request
 def before():
-    print("Here is your string: ")
+    print(string)
 
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
@@ -86,7 +86,9 @@ def NLPSERVICE6():
     return(strr)
              
 #Error Handling
-
+@app.errorhandler(404)
+def page_not_found(error):
+    return 'This page does not exist', 404
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=987654)
