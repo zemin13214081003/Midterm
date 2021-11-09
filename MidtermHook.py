@@ -87,4 +87,4 @@ def NLPSERVICE6():
 #Error Handling
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=9123)
+  app.run(host='0.0.0.0', port=9776258)
