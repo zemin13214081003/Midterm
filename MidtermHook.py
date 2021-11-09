@@ -3,6 +3,7 @@ from flask import request
 from flask import render_template
 from flask import jsonify
 import json
+import nltk
 from nltk import word_tokenize
 from nltk import pos_tag
 from nltk import RegexpParser
