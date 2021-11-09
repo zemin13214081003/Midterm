@@ -4,8 +4,6 @@ from flask import render_template
 from flask import jsonify
 import json
 from nltk import word_tokenize
-from nltk.tokenize import wordpunct_tokenize
-from nltk.tokenize import RegexpTokenizer
 from nltk import pos_tag
 from nltk import RegexpParser
 from collections import Counter
