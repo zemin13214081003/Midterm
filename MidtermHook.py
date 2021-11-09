@@ -24,7 +24,7 @@ def flask_import():
 
 @app.before_request
 def before():
-    print(string)
+    print('Hello and welcome')
 
 #Create the flask app to accept a string argument on the POST curl
 @app.route('/all', methods=['GET', 'POST'])
