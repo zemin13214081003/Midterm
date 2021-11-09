@@ -3,6 +3,12 @@ from flask import request
 from flask import render_template
 from flask import jsonify
 import json
+from nltk import word_tokenize
+from nltk.tokenize import wordpunct_tokenize
+from nltk.tokenize import RegexpTokenizer
+from nltk import pos_tag
+from nltk import RegexpParser
+from collections import Counter
 
 app = Flask(__name__) # "__main__"
 
@@ -100,4 +106,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=98989)
+  app.run(host='0.0.0.0', port=12123)
