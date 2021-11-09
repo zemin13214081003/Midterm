@@ -41,7 +41,7 @@ def post(string):
 @app.route("/nlp1", methods=["POST"])
 def nlp1():
     string={'string':request.json['string']}
-    input_str = string.lower()
+    input_str = str.lower()
     return jsonify({'string':input_str})
 
 #NLPService 2: remove numbers:
