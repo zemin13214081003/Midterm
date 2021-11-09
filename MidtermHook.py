@@ -40,8 +40,7 @@ def post(string):
 @app.route('/nlp1', methods=['POST'])
 def post(string):
     return {"data":string}
-api.add_resource("<string:name>")
-    
+
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['GET', 'POST'])
 def NLPSERVICE2():
