@@ -39,9 +39,9 @@ def post(string):
 def nlp1():
     request = request.form["request"]
     input_str = string
-    Service1Out = input_str.lower()
+    result = input_str.lower()
     print(string)
-    return nlp1out(result=result)
+    return service1out(result=result)
   
 #NLPService 2: remove numbers:
 @app.route('/2', methods=['POST'])
