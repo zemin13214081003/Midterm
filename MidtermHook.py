@@ -38,7 +38,7 @@ def post(string):
 
 #NLP Service 1: to lower case:
 @app.route('/nlp1', methods=['GET', 'POST'])
-def nlp1():
+def nlp1(data):
     data = request.form.get('string')
     return nlp1(data)
   
@@ -90,4 +90,4 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=3232321)
+  app.run(host='0.0.0.0', port=456456)
