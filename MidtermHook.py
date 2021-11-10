@@ -91,6 +91,7 @@ def NLPSERVICE6():
     lenth = len(string2)
     string3 = ["the length of words ", lenth]
     return jsonify({'':string3})
+ 
   
 #Error Handling
 @app.errorhandler(404)
