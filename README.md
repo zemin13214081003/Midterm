@@ -39,7 +39,7 @@ def page_not_found(error):
 Utilize the following Python curl call:
 
 import requests
-url = "http://3.21.158.149:789654/3"
+url = "http://3.21.158.149:789654/{approute}"
 response = requests.post(url, json={'string': 'MY TEST123'})
 print(response.text)
 print(response)
