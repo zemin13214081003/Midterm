@@ -15,7 +15,7 @@ def post(string):
 #NLP Service 1: to lower case:
 @app.route("/1", methods=["POST"])
 
-#NLPService 2: remove numbers:
+#NLP Service 2: remove numbers:
 @app.route('/2', methods=['POST'])
 
 #NLP Service 3: extract the stream of tokens with the help of regular expressions
