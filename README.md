@@ -24,10 +24,10 @@ def post(string):
 #NLP Service 4: sentiment analysis
 @app.route('/4', methods=['POST'])
              
-#NLP Service 5
+#NLP Service 5: Count of the words in the string
 @app.route('/5', methods=['POST'])
 
-#NLP Service 6
+#NLP Service 6: Length of the words in the string
 @app.route('/6', methods=['POST'])
 
   
